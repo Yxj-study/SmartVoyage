@@ -1,0 +1,40 @@
+{
+  "dataset": "SmartVoyage independent test v1",
+  "created_at": "2026-09-05T00:00:00+08:00",
+  "frozen": true,
+  "case_count": 160,
+  "files": {
+    "planning.jsonl": {
+      "case_count": 70,
+      "sha256": "701af91faf09409ff64a1a83cd449b8079a90269983f6853013a98e545759f44",
+      "categories": {
+        "single-task": 24,
+        "multi-task": 20,
+        "missing-slot": 14,
+        "paraphrase-boundary": 12
+      }
+    },
+    "workflow.jsonl": {
+      "case_count": 40,
+      "sha256": "24dbd1bc316a7d20faa761aef50e3a8cc9b86a35a64fced1a54ea1f4b8649148",
+      "categories": {
+        "weather-branch": 8,
+        "ticket-policy": 8,
+        "attraction": 6,
+        "confirmation-cancel": 8,
+        "safety-error": 10
+      }
+    },
+    "memory.jsonl": {
+      "case_count": 50,
+      "sha256": "0211d6f9cca01bbba00045678699495fa61491c100b9a86874db98dd4dffc868",
+      "categories": {
+        "stable-write-apply": 12,
+        "temporary-ignore": 8,
+        "current-override": 10,
+        "conflict-delete": 8,
+        "cross-user-isolation": 12
+      }
+    }
+  }
+}

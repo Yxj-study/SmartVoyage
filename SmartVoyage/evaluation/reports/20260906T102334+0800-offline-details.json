@@ -1,0 +1,6425 @@
+{
+  "created_at": "2026-09-06T10:23:34.899688+08:00",
+  "mode": "offline",
+  "dataset_path": "SmartVoyage\\evaluation\\data\\test",
+  "dataset_sha256": "df6c038414120b912df1faf36812b466b7ba97fed41896f5e149a372bf4d4e96",
+  "percentile_method": "nearest-rank",
+  "metric_definitions": {
+    "task_set_exact_match": "预测任务集合与标注集合完全一致的样本数/总样本数",
+    "task_f1": "weather、ticket、attraction、order 多标签任务的 Micro-F1",
+    "slot_accuracy": "规范化后正确槽位字段数/标注槽位字段数",
+    "plan_exact_match": "任务集合和全部标注槽位同时正确的样本数/总样本数",
+    "agent_selection_accuracy": "Worker 集合与标注集合一致的适用样本数/适用样本数",
+    "tool_call_success_rate": "成功工具调用数/尝试工具调用数",
+    "sql_execution_success_rate": "成功只读 SQL 数/尝试合法 SQL 数",
+    "task_success_rate": "满足验收条件且无禁止动作的样本数/适用样本数",
+    "multi_turn_task_success": "完整多轮流程成功数/多轮样本数",
+    "memory_retrieval_accuracy": "正确检索偏好字段数/标注偏好字段数",
+    "preference_application_accuracy": "正确应用偏好字段数/标注应用字段数",
+    "cross_user_leakage_rate": "观察到其他用户偏好的次数/隔离检查次数",
+    "latency_p50_ms": "全部样本端到端耗时的最近秩 P50",
+    "latency_p95_ms": "全部样本端到端耗时的最近秩 P95"
+  },
+  "summary": {
+    "sample_count": 160,
+    "failed_count": 0,
+    "task_set_exact_match": 0.96875,
+    "task_precision": 1.0,
+    "task_recall": 0.9747474747474747,
+    "task_f1": 0.9872122762148338,
+    "slot_accuracy": 1.0,
+    "plan_exact_match": 0.96875,
+    "agent_selection_accuracy": 1.0,
+    "tool_call_success_rate": 1.0,
+    "sql_execution_success_rate": null,
+    "task_success_rate": 1.0,
+    "multi_turn_task_success": 1.0,
+    "memory_retrieval_accuracy": 1.0,
+    "preference_application_accuracy": 1.0,
+    "cross_user_leakage_rate": 0.0,
+    "latency_p50_ms": 7.441000000198983,
+    "latency_p95_ms": 16.728999999941152
+  },
+  "predictions": [
+    {
+      "id": "test-memory-001",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "train"
+      },
+      "applied_preferences": {
+        "preferred_transport": "train"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 18.142299999908573,
+      "error": null
+    },
+    {
+      "id": "test-memory-002",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-02",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 400
+      },
+      "applied_preferences": {
+        "max_ticket_budget": 400
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.968700000148601,
+      "error": null
+    },
+    {
+      "id": "test-memory-003",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-03",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "二等座"
+      },
+      "applied_preferences": {
+        "preferred_seat_class": "二等座"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 11.332700000139084,
+      "error": null
+    },
+    {
+      "id": "test-memory-004",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-04",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_cabin_class": "商务舱"
+      },
+      "applied_preferences": {
+        "preferred_cabin_class": "商务舱"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 12.704699999858349,
+      "error": null
+    },
+    {
+      "id": "test-memory-005",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-05",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_departure_period": "morning"
+      },
+      "applied_preferences": {
+        "preferred_departure_period": "morning"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 11.859399999821107,
+      "error": null
+    },
+    {
+      "id": "test-memory-006",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_hotel_level": "四星"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.094900000012785,
+      "error": null
+    },
+    {
+      "id": "test-memory-007",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "destination": "扬州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_attraction_types": [
+          "历史文化",
+          "古镇"
+        ]
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 8.91700000011042,
+      "error": null
+    },
+    {
+      "id": "test-memory-008",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "flight"
+      },
+      "applied_preferences": {
+        "preferred_transport": "flight"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.973299999932351,
+      "error": null
+    },
+    {
+      "id": "test-memory-009",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-09",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 500
+      },
+      "applied_preferences": {
+        "max_ticket_budget": 500
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.620300000027783,
+      "error": null
+    },
+    {
+      "id": "test-memory-010",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "applied_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.796699999900738,
+      "error": null
+    },
+    {
+      "id": "test-memory-011",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_cabin_class": "经济舱"
+      },
+      "applied_preferences": {
+        "preferred_cabin_class": "经济舱"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.123799999973926,
+      "error": null
+    },
+    {
+      "id": "test-memory-012",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-12",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_departure_period": "night"
+      },
+      "applied_preferences": {
+        "preferred_departure_period": "night"
+      },
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.468700000046738,
+      "error": null
+    },
+    {
+      "id": "test-memory-013",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-21",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 11.139100000036706,
+      "error": null
+    },
+    {
+      "id": "test-memory-014",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-22",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.709399999996094,
+      "error": null
+    },
+    {
+      "id": "test-memory-015",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-23",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.605500000110624,
+      "error": null
+    },
+    {
+      "id": "test-memory-016",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-24",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.499700000082157,
+      "error": null
+    },
+    {
+      "id": "test-memory-017",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-25",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.23269999996046,
+      "error": null
+    },
+    {
+      "id": "test-memory-018",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.032699999806937,
+      "error": null
+    },
+    {
+      "id": "test-memory-019",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "destination": "扬州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 8.4399999998368,
+      "error": null
+    },
+    {
+      "id": "test-memory-020",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.430900000073962,
+      "error": null
+    },
+    {
+      "id": "test-memory-021",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-14",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "train"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.367800000040006,
+      "error": null
+    },
+    {
+      "id": "test-memory-022",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-15",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 400
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.304300000143485,
+      "error": null
+    },
+    {
+      "id": "test-memory-023",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-16",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "二等座"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 11.589899999989939,
+      "error": null
+    },
+    {
+      "id": "test-memory-024",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-17",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_cabin_class": "商务舱"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.661799999979849,
+      "error": null
+    },
+    {
+      "id": "test-memory-025",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-18",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_departure_period": "morning"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.825699999941207,
+      "error": null
+    },
+    {
+      "id": "test-memory-026",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_hotel_level": "四星"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.893299999930605,
+      "error": null
+    },
+    {
+      "id": "test-memory-027",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "destination": "扬州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_attraction_types": [
+          "历史文化",
+          "古镇"
+        ]
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.73840000006021,
+      "error": null
+    },
+    {
+      "id": "test-memory-028",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-21",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "flight"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 11.186199999883684,
+      "error": null
+    },
+    {
+      "id": "test-memory-029",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-22",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 500
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 11.77759999995942,
+      "error": null
+    },
+    {
+      "id": "test-memory-030",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-23",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 2,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.484700000006342,
+      "error": null
+    },
+    {
+      "id": "test-memory-031",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "flight"
+      },
+      "applied_preferences": {
+        "preferred_transport": "flight"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 14.602800000147909,
+      "error": null
+    },
+    {
+      "id": "test-memory-032",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 400
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 14.299999999821011,
+      "error": null
+    },
+    {
+      "id": "test-memory-033",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-09",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "applied_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 14.738099999931364,
+      "error": null
+    },
+    {
+      "id": "test-memory-034",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_cabin_class": "商务舱"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 14.85980000006748,
+      "error": null
+    },
+    {
+      "id": "test-memory-035",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_departure_period": "afternoon"
+      },
+      "applied_preferences": {
+        "preferred_departure_period": "afternoon"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 14.8060000001351,
+      "error": null
+    },
+    {
+      "id": "test-memory-036",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_hotel_level": "四星"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 12.74350000016966,
+      "error": null
+    },
+    {
+      "id": "test-memory-037",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "destination": "扬州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_attraction_types": [
+          "自然风光",
+          "博物馆"
+        ]
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 13.313199999856806,
+      "error": null
+    },
+    {
+      "id": "test-memory-038",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-14",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "flight"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 16.48339999997006,
+      "error": null
+    },
+    {
+      "id": "test-memory-039",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-27",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "train"
+      },
+      "applied_preferences": {
+        "preferred_transport": "train"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 17.96680000006745,
+      "error": null
+    },
+    {
+      "id": "test-memory-040",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 400
+      },
+      "applied_preferences": {
+        "max_ticket_budget": 400
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 18.443100000013146,
+      "error": null
+    },
+    {
+      "id": "test-memory-041",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-02",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "二等座"
+      },
+      "applied_preferences": {
+        "preferred_seat_class": "二等座"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 17.56470000009358,
+      "error": null
+    },
+    {
+      "id": "test-memory-042",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-03",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_cabin_class": "商务舱"
+      },
+      "applied_preferences": {
+        "preferred_cabin_class": "商务舱"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 16.728999999941152,
+      "error": null
+    },
+    {
+      "id": "test-memory-043",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-04",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_departure_period": "morning"
+      },
+      "applied_preferences": {
+        "preferred_departure_period": "morning"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 16.72059999987141,
+      "error": null
+    },
+    {
+      "id": "test-memory-044",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_hotel_level": "四星"
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 13.570800000024974,
+      "error": null
+    },
+    {
+      "id": "test-memory-045",
+      "predicted_tasks": [],
+      "predicted_slots": {
+        "destination": "扬州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_attraction_types": [
+          "历史文化",
+          "古镇"
+        ]
+      },
+      "applied_preferences": {},
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 13.533099999904152,
+      "error": null
+    },
+    {
+      "id": "test-memory-046",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_transport": "flight"
+      },
+      "applied_preferences": {
+        "preferred_transport": "flight"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 16.79480000007061,
+      "error": null
+    },
+    {
+      "id": "test-memory-047",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "max_ticket_budget": 500
+      },
+      "applied_preferences": {
+        "max_ticket_budget": 500
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 16.597799999999552,
+      "error": null
+    },
+    {
+      "id": "test-memory-048",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-09",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "applied_preferences": {
+        "preferred_seat_class": "一等座"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 16.712800000050265,
+      "error": null
+    },
+    {
+      "id": "test-memory-049",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "镇江",
+        "destination": "扬州",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_cabin_class": "经济舱"
+      },
+      "applied_preferences": {
+        "preferred_cabin_class": "经济舱"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 18.411099999866565,
+      "error": null
+    },
+    {
+      "id": "test-memory-050",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "佛山",
+        "destination": "惠州",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": true,
+      "retrieved_preferences": {
+        "preferred_departure_period": "night"
+      },
+      "applied_preferences": {
+        "preferred_departure_period": "night"
+      },
+      "cross_user_checks": 3,
+      "cross_user_leaks": 0,
+      "latency_ms": 18.002100000103383,
+      "error": null
+    },
+    {
+      "id": "test-planning-001",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "无锡",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 8.291599999893151,
+      "error": null
+    },
+    {
+      "id": "test-planning-002",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "绍兴",
+        "destination": "宁波",
+        "date": "2026-10-02",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.247099999882266,
+      "error": null
+    },
+    {
+      "id": "test-planning-003",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "温州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.686799999921277,
+      "error": null
+    },
+    {
+      "id": "test-planning-004",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "嘉兴",
+        "date": "2026-10-04",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.213800000068659,
+      "error": null
+    },
+    {
+      "id": "test-planning-005",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "镇江",
+        "destination": "绍兴",
+        "date": "2026-10-05",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.979300000035437,
+      "error": null
+    },
+    {
+      "id": "test-planning-006",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "常州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.1880000000655855,
+      "error": null
+    },
+    {
+      "id": "test-planning-007",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "扬州",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.128599999987273,
+      "error": null
+    },
+    {
+      "id": "test-planning-008",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "南通",
+        "destination": "镇江",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.477599999925587,
+      "error": null
+    },
+    {
+      "id": "test-planning-009",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "徐州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.372699999928955,
+      "error": null
+    },
+    {
+      "id": "test-planning-010",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "连云港",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.370799999989686,
+      "error": null
+    },
+    {
+      "id": "test-planning-011",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "淮安",
+        "destination": "南通",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.92639999988387,
+      "error": null
+    },
+    {
+      "id": "test-planning-012",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "泰州",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.145599999854312,
+      "error": null
+    },
+    {
+      "id": "test-planning-013",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "盐城",
+        "date": "2026-10-13",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.1683999999786465,
+      "error": null
+    },
+    {
+      "id": "test-planning-014",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "洛阳",
+        "destination": "淮安",
+        "date": "2026-10-14",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.362000000081025,
+      "error": null
+    },
+    {
+      "id": "test-planning-015",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "芜湖",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.601100000149017,
+      "error": null
+    },
+    {
+      "id": "test-planning-016",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "黄山",
+        "date": "2026-10-16",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.278000000065731,
+      "error": null
+    },
+    {
+      "id": "test-planning-017",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "襄阳",
+        "destination": "洛阳",
+        "date": "2026-10-17",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.14569999993364,
+      "error": null
+    },
+    {
+      "id": "test-planning-018",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "开封",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.961200000001554,
+      "error": null
+    },
+    {
+      "id": "test-planning-019",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "宜昌",
+        "date": "2026-10-19",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.845800000064628,
+      "error": null
+    },
+    {
+      "id": "test-planning-020",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "桂林",
+        "destination": "襄阳",
+        "date": "2026-10-20",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.259800000179894,
+      "error": null
+    },
+    {
+      "id": "test-planning-021",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "岳阳",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.573400000002948,
+      "error": null
+    },
+    {
+      "id": "test-planning-022",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "株洲",
+        "date": "2026-10-22",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.308399999852554,
+      "error": null
+    },
+    {
+      "id": "test-planning-023",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "遵义",
+        "destination": "桂林",
+        "date": "2026-10-23",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.2060999998720945,
+      "error": null
+    },
+    {
+      "id": "test-planning-024",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "南宁",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.360600000130944,
+      "error": null
+    },
+    {
+      "id": "test-planning-025",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "漳州",
+        "destination": "贵阳",
+        "date": "2026-10-25",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.945799999788505,
+      "error": null
+    },
+    {
+      "id": "test-planning-026",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "汕头",
+        "destination": "遵义",
+        "date": "2026-10-26",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.215899999891917,
+      "error": null
+    },
+    {
+      "id": "test-planning-027",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "大理",
+        "date": "2026-10-27",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.458399999904941,
+      "error": null
+    },
+    {
+      "id": "test-planning-028",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "东莞",
+        "destination": "丽江",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.91069999991123,
+      "error": null
+    },
+    {
+      "id": "test-planning-029",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "惠州",
+        "destination": "泉州",
+        "date": "2026-10-02",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.56109999997534,
+      "error": null
+    },
+    {
+      "id": "test-planning-030",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "海口",
+        "destination": "漳州",
+        "date": "2026-10-03",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.441000000198983,
+      "error": null
+    },
+    {
+      "id": "test-planning-031",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "汕头",
+        "date": "2026-10-04",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.187400000020716,
+      "error": null
+    },
+    {
+      "id": "test-planning-032",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "兰州",
+        "destination": "佛山",
+        "date": "2026-10-05",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.9931000000215136,
+      "error": null
+    },
+    {
+      "id": "test-planning-033",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "银川",
+        "destination": "东莞",
+        "date": "2026-10-06",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.885600000008708,
+      "error": null
+    },
+    {
+      "id": "test-planning-034",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "西宁",
+        "destination": "惠州",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.650600000033592,
+      "error": null
+    },
+    {
+      "id": "test-planning-035",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "海口",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.546599999841419,
+      "error": null
+    },
+    {
+      "id": "test-planning-036",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "哈尔滨",
+        "destination": "三亚",
+        "date": "2026-10-09",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.465800000090894,
+      "error": null
+    },
+    {
+      "id": "test-planning-037",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "长春",
+        "destination": "兰州",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.76769999993121,
+      "error": null
+    },
+    {
+      "id": "test-planning-038",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "大连",
+        "destination": "银川",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.202900000038426,
+      "error": null
+    },
+    {
+      "id": "test-planning-039",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "西宁",
+        "date": "2026-10-12",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.956800000101794,
+      "error": null
+    },
+    {
+      "id": "test-planning-040",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "保定",
+        "destination": "乌鲁木齐",
+        "date": "2026-10-13",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.745099999965532,
+      "error": null
+    },
+    {
+      "id": "test-planning-041",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "秦皇岛",
+        "destination": "哈尔滨",
+        "date": "2026-10-14",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.660299999997733,
+      "error": null
+    },
+    {
+      "id": "test-planning-042",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "烟台",
+        "destination": "长春",
+        "date": "2026-10-15",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.36060000008365,
+      "error": null
+    },
+    {
+      "id": "test-planning-043",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "大连",
+        "date": "2026-10-16",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.939500000044063,
+      "error": null
+    },
+    {
+      "id": "test-planning-044",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "潍坊",
+        "destination": "石家庄",
+        "date": "2026-10-17",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 8.49249999987478,
+      "error": null
+    },
+    {
+      "id": "test-planning-045",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 4.254199999877528,
+      "error": null
+    },
+    {
+      "id": "test-planning-046",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "秦皇岛",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.871800000069925,
+      "error": null
+    },
+    {
+      "id": "test-planning-047",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "烟台",
+        "destination": "潍坊",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.7763999998787767,
+      "error": null
+    },
+    {
+      "id": "test-planning-048",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.895199999988108,
+      "error": null
+    },
+    {
+      "id": "test-planning-049",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "潍坊",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.6198000000240427,
+      "error": null
+    },
+    {
+      "id": "test-planning-050",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "临沂",
+        "destination": "安阳",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.7690999999995256,
+      "error": null
+    },
+    {
+      "id": "test-planning-051",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 4.064499999913096,
+      "error": null
+    },
+    {
+      "id": "test-planning-052",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "安阳",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 4.042300000037358,
+      "error": null
+    },
+    {
+      "id": "test-planning-053",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "新乡",
+        "destination": "九江",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.962700000101904,
+      "error": null
+    },
+    {
+      "id": "test-planning-054",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.9501999999629334,
+      "error": null
+    },
+    {
+      "id": "test-planning-055",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "九江",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.6170999999285414,
+      "error": null
+    },
+    {
+      "id": "test-planning-056",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "赣州",
+        "destination": "景德镇",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.751199999896926,
+      "error": null
+    },
+    {
+      "id": "test-planning-057",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.9773999999397347,
+      "error": null
+    },
+    {
+      "id": "test-planning-058",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "景德镇",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.8515000001098088,
+      "error": null
+    },
+    {
+      "id": "test-planning-059",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "湖州",
+        "date": "2026-10-05",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.8045999998957996,
+      "error": null
+    },
+    {
+      "id": "test-planning-060",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "呼和浩特",
+        "destination": "金华",
+        "date": "2026-10-06",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.198900000072172,
+      "error": null
+    },
+    {
+      "id": "test-planning-061",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "鞍山",
+        "destination": "衢州",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.981699999869306,
+      "error": null
+    },
+    {
+      "id": "test-planning-062",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "台州",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.630899999914618,
+      "error": null
+    },
+    {
+      "id": "test-planning-063",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "吉林",
+        "destination": "舟山",
+        "date": "2026-10-09",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.16600000012113,
+      "error": null
+    },
+    {
+      "id": "test-planning-064",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "无锡",
+        "destination": "日照",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.103199999846765,
+      "error": null
+    },
+    {
+      "id": "test-planning-065",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "东营",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.975099999886879,
+      "error": null
+    },
+    {
+      "id": "test-planning-066",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "温州",
+        "destination": "包头",
+        "date": "2026-10-12",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.643400000053589,
+      "error": null
+    },
+    {
+      "id": "test-planning-067",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "嘉兴",
+        "destination": "呼和浩特",
+        "date": "2026-10-13",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.1639000000232045,
+      "error": null
+    },
+    {
+      "id": "test-planning-068",
+      "predicted_tasks": [
+        "weather"
+      ],
+      "predicted_slots": {
+        "destination": "鞍山",
+        "date": "2026-10-14",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.0697999999774765,
+      "error": null
+    },
+    {
+      "id": "test-planning-069",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "常州",
+        "destination": "丹东",
+        "date": "2026-10-15",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.9791999999561085,
+      "error": null
+    },
+    {
+      "id": "test-planning-070",
+      "predicted_tasks": [
+        "ticket",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "扬州",
+        "destination": "吉林",
+        "date": "2026-10-16",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 69.50570000003609,
+      "error": null
+    },
+    {
+      "id": "test-workflow-001",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "无锡",
+        "destination": "绍兴",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.372000000032131,
+      "error": null
+    },
+    {
+      "id": "test-workflow-002",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "宁波",
+        "destination": "常州",
+        "date": "2026-10-02",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.642199999987497,
+      "error": null
+    },
+    {
+      "id": "test-workflow-003",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "温州",
+        "destination": "扬州",
+        "date": "2026-10-03",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 8.271300000160409,
+      "error": null
+    },
+    {
+      "id": "test-workflow-004",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "嘉兴",
+        "destination": "镇江",
+        "date": "2026-10-04",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.493300000101954,
+      "error": null
+    },
+    {
+      "id": "test-workflow-005",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "绍兴",
+        "destination": "徐州",
+        "date": "2026-10-05",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 8.176999999932377,
+      "error": null
+    },
+    {
+      "id": "test-workflow-006",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "常州",
+        "destination": "连云港",
+        "date": "2026-10-06",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.331400000111898,
+      "error": null
+    },
+    {
+      "id": "test-workflow-007",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "扬州",
+        "destination": "南通",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.785900000044421,
+      "error": null
+    },
+    {
+      "id": "test-workflow-008",
+      "predicted_tasks": [
+        "weather",
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "镇江",
+        "destination": "泰州",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": true,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.083899999997811,
+      "error": null
+    },
+    {
+      "id": "test-workflow-009",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "徐州",
+        "destination": "芜湖",
+        "date": "2026-10-09",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.959300000062285,
+      "error": null
+    },
+    {
+      "id": "test-workflow-010",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "连云港",
+        "destination": "黄山",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.219000000101005,
+      "error": null
+    },
+    {
+      "id": "test-workflow-011",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "南通",
+        "destination": "洛阳",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.037800000058269,
+      "error": null
+    },
+    {
+      "id": "test-workflow-012",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "泰州",
+        "destination": "开封",
+        "date": "2026-10-12",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.455800000139789,
+      "error": null
+    },
+    {
+      "id": "test-workflow-013",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "盐城",
+        "destination": "宜昌",
+        "date": "2026-10-13",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.21539999997367,
+      "error": null
+    },
+    {
+      "id": "test-workflow-014",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "淮安",
+        "destination": "襄阳",
+        "date": "2026-10-14",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.355900000016845,
+      "error": null
+    },
+    {
+      "id": "test-workflow-015",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "芜湖",
+        "destination": "岳阳",
+        "date": "2026-10-15",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.33349999998245,
+      "error": null
+    },
+    {
+      "id": "test-workflow-016",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "黄山",
+        "destination": "株洲",
+        "date": "2026-10-16",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.149099999902319,
+      "error": null
+    },
+    {
+      "id": "test-workflow-017",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "洛阳",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.585500000051979,
+      "error": null
+    },
+    {
+      "id": "test-workflow-018",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "开封",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.3523999999688385,
+      "error": null
+    },
+    {
+      "id": "test-workflow-019",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "宜昌",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.732800000032512,
+      "error": null
+    },
+    {
+      "id": "test-workflow-020",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "襄阳",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.000899999889953,
+      "error": null
+    },
+    {
+      "id": "test-workflow-021",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "岳阳",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.432499999869833,
+      "error": null
+    },
+    {
+      "id": "test-workflow-022",
+      "predicted_tasks": [
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "株洲",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 5.5544000001646054,
+      "error": null
+    },
+    {
+      "id": "test-workflow-023",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "桂林",
+        "destination": "汕头",
+        "date": "2026-10-23",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "order"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "order",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.51099999995131,
+      "error": null
+    },
+    {
+      "id": "test-workflow-024",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "南宁",
+        "destination": "佛山",
+        "date": "2026-10-24",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.45729999989453,
+      "error": null
+    },
+    {
+      "id": "test-workflow-025",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "贵阳",
+        "destination": "东莞",
+        "date": "2026-10-25",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "order"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "order",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.444499999948675,
+      "error": null
+    },
+    {
+      "id": "test-workflow-026",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "遵义",
+        "destination": "惠州",
+        "date": "2026-10-26",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.134800000083487,
+      "error": null
+    },
+    {
+      "id": "test-workflow-027",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "大理",
+        "destination": "海口",
+        "date": "2026-10-27",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "order"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "order",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.605599999962578,
+      "error": null
+    },
+    {
+      "id": "test-workflow-028",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "丽江",
+        "destination": "三亚",
+        "date": "2026-10-01",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.491900000057285,
+      "error": null
+    },
+    {
+      "id": "test-workflow-029",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "flight",
+        "departure": "泉州",
+        "destination": "兰州",
+        "date": "2026-10-02",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket",
+        "order"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "order",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 10.461399999940113,
+      "error": null
+    },
+    {
+      "id": "test-workflow-030",
+      "predicted_tasks": [
+        "ticket",
+        "order"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "漳州",
+        "destination": "银川",
+        "date": "2026-10-03",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "book_if_available",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "confirmation",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 9.601700000075652,
+      "error": null
+    },
+    {
+      "id": "test-workflow-031",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "汕头",
+        "destination": "乌鲁木齐",
+        "date": "2026-10-04",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.398700000090685,
+      "error": null
+    },
+    {
+      "id": "test-workflow-032",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "哈尔滨",
+        "date": "2026-10-05",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.6144000001932,
+      "error": null
+    },
+    {
+      "id": "test-workflow-033",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "destination": "长春",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.9412999999512977,
+      "error": null
+    },
+    {
+      "id": "test-workflow-034",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "惠州",
+        "destination": "大连",
+        "date": "2026-10-07",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.0723999999936495,
+      "error": null
+    },
+    {
+      "id": "test-workflow-035",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "石家庄",
+        "date": "2026-10-08",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.815299999947456,
+      "error": null
+    },
+    {
+      "id": "test-workflow-036",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "destination": "保定",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 4.660399999920628,
+      "error": null
+    },
+    {
+      "id": "test-workflow-037",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "兰州",
+        "destination": "秦皇岛",
+        "date": "2026-10-10",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.413999999949738,
+      "error": null
+    },
+    {
+      "id": "test-workflow-038",
+      "predicted_tasks": [
+        "weather",
+        "attraction"
+      ],
+      "predicted_slots": {
+        "destination": "烟台",
+        "date": "2026-10-11",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "weather",
+        "attraction"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "weather",
+        "weather_policy",
+        "supervisor",
+        "attraction",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 2,
+      "tool_calls_succeeded": 2,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 7.680999999820415,
+      "error": null
+    },
+    {
+      "id": "test-workflow-039",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "destination": "威海",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 0,
+      "tool_calls_succeeded": 0,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": false,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 3.7601000001359353,
+      "error": null
+    },
+    {
+      "id": "test-workflow-040",
+      "predicted_tasks": [
+        "ticket"
+      ],
+      "predicted_slots": {
+        "ticket_type": "train",
+        "departure": "乌鲁木齐",
+        "destination": "潍坊",
+        "date": "2026-10-13",
+        "quantity": 1,
+        "weather_required_for_ticket": false,
+        "action": "query",
+        "requires_confirmation": true
+      },
+      "selected_workers": [
+        "ticket"
+      ],
+      "observed_actions": [
+        "memory_load",
+        "planner",
+        "supervisor",
+        "ticket",
+        "ticket_policy",
+        "supervisor",
+        "memory_persist"
+      ],
+      "tool_calls_attempted": 1,
+      "tool_calls_succeeded": 1,
+      "sql_queries_attempted": 0,
+      "sql_queries_succeeded": 0,
+      "task_success": true,
+      "multi_turn_success": null,
+      "retrieved_preferences": {},
+      "applied_preferences": {},
+      "cross_user_checks": 1,
+      "cross_user_leaks": 0,
+      "latency_ms": 6.509400000140886,
+      "error": null
+    }
+  ]
+}
