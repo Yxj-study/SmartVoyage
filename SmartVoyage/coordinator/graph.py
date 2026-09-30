@@ -141,11 +141,17 @@ def sanitize_plan(user_query: str, raw_plan: TravelPlan) -> TravelPlan:
     has_ticket_request = bool(plan.ticket_type) or any(
         term in user_query for term in ticket_terms
     )
-    has_booking_term = any(term in user_query for term in booking_terms)
+    has_booking_term = any(term in user_query for term in booking_terms) or bool(
+        re.search(
+            r"(?:预订|订|购买|买)\s*(?:一|1)?\s*张?\s*"
+            r"(?:机票|飞机票|火车票|高铁票|动车票|演出票|票)",
+            user_query,
+        )
+    )
     has_negated_booking = bool(
         re.search(
             r"(?:不|别|不要|无需|禁止|千万别).{0,6}"
-            r"(?:预订|订票|买票|买一张|购买|下单)",
+            r"(?:预订|订(?:一|1)?张?票|买票|买一张|购买|下单)",
             user_query,
         )
     )
@@ -242,7 +248,18 @@ def sanitize_plan(user_query: str, raw_plan: TravelPlan) -> TravelPlan:
     attraction_ready = "attraction" not in plan.tasks or bool(
         plan.destination or plan.departure
     )
-    if ticket_ready and weather_ready and attraction_ready:
+    if not ticket_ready:
+        missing: list[str] = []
+        if not plan.ticket_type:
+            missing.append("票种（机票或火车票）")
+        if not plan.departure:
+            missing.append("出发地")
+        if not plan.destination:
+            missing.append("目的地")
+        if not plan.date:
+            missing.append("日期")
+        plan.clarification = f"已识别到订票需求，请补充{'、'.join(missing)}。"
+    elif weather_ready and attraction_ready:
         plan.clarification = None
     return plan
 

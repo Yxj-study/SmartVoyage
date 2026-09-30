@@ -620,6 +620,20 @@ class CoordinatorGraphTest(unittest.TestCase):
 
         self.assertEqual(plan.tasks, ["ticket", "attraction"])
 
+    def test_plan_sanitizer_does_not_ignore_conditional_generic_booking(self):
+        plan = sanitize_plan(
+            "帮我查询长沙的天气，如果天气还可以请订一张票",
+            TravelPlan(),
+        )
+
+        self.assertEqual(plan.destination, "长沙")
+        self.assertEqual(plan.tasks, ["weather", "ticket", "order"])
+        self.assertEqual(plan.action, "book_if_available")
+        self.assertTrue(plan.weather_required_for_ticket)
+        self.assertIn("票种", plan.clarification)
+        self.assertIn("出发地", plan.clarification)
+        self.assertIn("日期", plan.clarification)
+
     def test_booking_interrupt_can_cancel_without_ordering(self):
         calls = []
         plan = TravelPlan(
